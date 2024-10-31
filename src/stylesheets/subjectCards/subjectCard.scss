@@ -1,0 +1,29 @@
+// src/stylesheets/subject-card.scss
+.subject-card {
+    width: 100%; // Para que ocupe todo el ancho de su celda en la grid
+    max-width: 700px; // Ajusta el tamaño máximo según tu preferencia
+    margin: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  
+    .subject-image {
+      height: 200px; // Aumenta la altura de la imagen para hacer la tarjeta más grande
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .subject-title {
+      display: block;
+      padding: 0.5rem;
+      font-size: 1.2rem; // Aumenta el tamaño de fuente si deseas que el texto sea más grande
+      color: #333;
+      text-decoration: none;
+  
+      &:hover {
+        color: #007bff; // Cambia el color al pasar el mouse
+      }
+    }
+  }
+  

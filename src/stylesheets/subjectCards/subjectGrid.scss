@@ -1,0 +1,9 @@
+// src/stylesheets/subjects-grid.scss
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Tres columnas
+    gap: 1rem;
+    padding: 1rem;
+    justify-items: center; // Centra las tarjetas dentro de cada celda
+  }
+  

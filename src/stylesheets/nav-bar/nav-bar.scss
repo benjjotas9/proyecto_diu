@@ -1,5 +1,44 @@
 .nav-bar {
   display: flex;
-  background-color: #ccc;
-  padding-left: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    img {
+      height: 54px; // Ajusta la altura del logo según sea necesario
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;  // Espaciado entre los enlaces
+
+    .nav-bar__link {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover {
+        color: #0056b3;  // Color en hover
+      }
+
+      &--active {
+        font-weight: bold;
+        color: #333;  // Color para el enlace activo
+      }
+    }
+  }
 }
