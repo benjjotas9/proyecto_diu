@@ -56,6 +56,19 @@ const asignaturas = [
         { nombre: 'Control 3', nota: 5.2, ponderacion: 0.1 },
       ],
     },
+    {
+      nombre: 'Física General III',
+      calificaciones: [
+        { nombre: 'Certamen 1', nota: 3, ponderacion: 0.15 },
+        { nombre: 'Certamen 2', nota: 7, ponderacion: 0.15 },
+        { nombre: 'Tarea 1', nota: 4, ponderacion: 0.1 },
+        { nombre: 'Tarea 2', nota: 4.5, ponderacion: 0.1 },
+        { nombre: 'Tarea 3', nota: 4.7, ponderacion: 0.1 },
+        { nombre: 'Control 1', nota: 2.1, ponderacion: 0.1 },
+        { nombre: 'Control 2', nota: 5.1, ponderacion: 0.1 },
+        { nombre: 'Control 3', nota: 4.8, ponderacion: 0.1 },
+      ],
+    },
   ];
 
 const calcularNotaFinal = (calificaciones) => {
