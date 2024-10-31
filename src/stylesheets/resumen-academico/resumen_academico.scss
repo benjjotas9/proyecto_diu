@@ -1,0 +1,25 @@
+// src/stylesheets/resumen_academico.scss
+.resumen-academico {
+    .MuiAccordion-root {
+      background-color: rgb(1, 78, 104);
+      color: #ffffff;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  
+    .MuiAccordionSummary-root {
+      .MuiTypography-root {
+        color: #ffffff;
+      }
+  
+      .MuiSvgIcon-root { // Aplica al icono ExpandMore
+        color: #ffffff;
+      }
+    }
+  
+    .MuiAccordionDetails-root {
+      background-color: lightblue; // Color del fondo dentro de la sección expandida
+      color: #050404;
+    }
+  }
+  
