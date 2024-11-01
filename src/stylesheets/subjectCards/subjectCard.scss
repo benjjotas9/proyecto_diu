@@ -20,6 +20,11 @@
       font-size: 1.2rem; // Aumenta el tamaño de fuente si deseas que el texto sea más grande
       color: #333;
       text-decoration: none;
+
+      .dark-mode & {
+        background-color: #333333; /* Fondo oscuro para la tarjeta */
+        color: #ffffff; /* Texto blanco para el modo oscuro */
+      }
   
       &:hover {
         color: #007bff; // Cambia el color al pasar el mouse

@@ -1,61 +1,114 @@
-// src/stylesheets/calendario/calendario.scss
 .calendario-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  .react-calendar {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; // Fondo claro
+  }
+
+  .event-form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  
-    .react-calendar {
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    input {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+      background-color: #ffffff; // Fondo claro
+      color: #000000; // Texto oscuro
     }
-  
-    .event-form {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-  
-      input {
-        padding: 0.5rem;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        outline: none;
-      }
-  
-      button {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #0056b3;
-        }
-      }
-    }
-  
-    .events-list {
-      width: 100%;
-      max-width: 400px;
-      margin-top: 1rem;
-  
-      h3 {
-        font-size: 1.2rem;
-      }
-  
-      ul {
-        list-style: none;
-        padding: 0;
-  
-        li {
-          background: #f0f0f0;
-          padding: 0.5rem;
-          border-radius: 4px;
-          margin-bottom: 0.5rem;
-        }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff; // Color del botón claro
+      color: #ffffff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
       }
     }
   }
+
+  .events-list {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1rem;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: #f0f0f0; // Fondo claro
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// Estilos específicos para modo oscuro
+.dark-mode .calendario-page {
+  .react-calendar {
+    background-color: #1e1e1e; // Fondo oscuro
+    color: #ffffff; // Texto claro
+  }
+  .react-calendar__tile--now {
+    background-color: #333333; // Fondo para el día actual
+    color: #ffffff; // Texto blanco para el día actual
+  }
   
+  .react-calendar__navigation button {
+    color: #ffffff; // Cambia el color del nombre del mes y botones de navegación
+    background-color: transparent;
+  }
+
+  .react-calendar__month-view__days__day {
+    color: #ffffff; // Cambia el color de los días
+  }
+
+  .react-calendar__tile--active {
+    background-color: #555555; // Fondo para el día activo en modo oscuro
+    color: #ffffff; // Texto blanco para el día activo
+  }
+
+  .event-form {
+    input {
+      background-color: #2c2c2c; // Fondo oscuro
+      color: #ffffff; // Texto claro
+      border: 1px solid #444; // Borde oscuro
+    }
+
+    button {
+      background-color: #444; // Botón oscuro
+      &:hover {
+        background-color: #666; // Fondo más claro en hover
+      }
+    }
+  }
+
+  .events-list {
+    h3 {
+      color: #ffffff; // Texto claro
+    }
+
+    ul li {
+      background: #333; // Fondo oscuro
+      color: #ffffff; // Texto claro
+    }
+  }
+}

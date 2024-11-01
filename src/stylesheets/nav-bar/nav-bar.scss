@@ -11,7 +11,7 @@
     margin-right: auto;
 
     img {
-      height: 54px; // Ajusta la altura del logo según sea necesario
+      height: 54px;
       margin-right: 10px;
     }
 
@@ -24,7 +24,7 @@
 
   &__links {
     display: flex;
-    gap: 20px;  // Espaciado entre los enlaces
+    gap: 20px;
 
     .nav-bar__link {
       color: #333;
@@ -32,12 +32,55 @@
       font-size: 16px;
 
       &:hover {
-        color: #0056b3;  // Color en hover
+        color: #0056b3;
       }
 
       &--active {
         font-weight: bold;
-        color: #333;  // Color para el enlace activo
+        color: #333;
+      }
+    }
+  }
+
+  /* Nuevo estilo para el botón de alternar tema */
+  &__toggle {
+    margin-left: 20px;
+    button {
+      padding: 5px 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
+
+/* Variables de color para el modo oscuro */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+
+  .nav-bar {
+    background-color: #121212;
+    border-bottom: 1px solid #333333;
+
+    &__logo span,
+    &__links .nav-bar__link {
+      color: #f8f3ff;
+    }
+
+    .nav-bar__toggle button {
+      background-color: #f8f3ff;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #7f39fb;
       }
     }
   }
