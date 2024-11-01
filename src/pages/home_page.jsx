@@ -14,27 +14,27 @@ const subjects = [
   {
     image: fisicaImage,
     title: 'Física General III',
-    link: '#'
+    link: '/placeholder'
   },
   {
     image: economiaImage,
     title: 'Economía I-A',
-    link: '#'
+    link: '/placeholder'
   },
   {
     image: informaticaImage,
     title: 'Investigación de Operaciones',
-    link: '#'
+    link: '/placeholder'
   },
   {
     image: industrialImage,
     title: 'Información y Matematicas Financieras',
-    link: '#'
+    link: '/placeholder'
   },
   {
     image: efiImage,
     title: 'Tenis',
-    link: '#'
+    link: '/placeholder'
   },
   // Agrega más asignaturas aquí
 ];
