@@ -1,57 +1,52 @@
 // src/pages/calendario.jsx
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import { Box, Typography } from '@mui/material';
 import '../stylesheets/calendario/index.scss';
 
-const CalendarioPage = () => {
-  const [date, setDate] = useState(new Date());
+const Calendario = () => {
   const [events, setEvents] = useState([]);
-  const [eventDescription, setEventDescription] = useState('');
 
-  // Maneja la selección de fecha
-  const handleDateChange = (selectedDate) => {
-    setDate(selectedDate);
-  };
-
-  // Maneja el cambio en el input de descripción del evento
-  const handleInputChange = (e) => {
-    setEventDescription(e.target.value);
-  };
-
-  // Agrega un nuevo evento
-  const addEvent = () => {
-    setEvents([...events, { date, description: eventDescription }]);
-    setEventDescription(''); // Limpia el campo de descripción
+  // Función para manejar la adición de eventos al hacer clic en una fecha
+  const handleDateClick = (info) => {
+    const title = prompt('Introduce el título del evento:');
+    if (title) {
+      setEvents([
+        ...events,
+        {
+          title,
+          start: info.date,
+          end: info.date,
+          allDay: info.allDay,
+        },
+      ]);
+    }
   };
 
   return (
-    <div className="calendario-page">
-      <h2>Calendario Interactivo</h2>
-      <Calendar onChange={handleDateChange} value={date} />
-
-      <div className="event-form">
-        <input
-          type="text"
-          value={eventDescription}
-          onChange={handleInputChange}
-          placeholder="Descripción del evento (Prueba, Tarea, etc.)"
-        />
-        <button onClick={addEvent}>Agregar Evento</button>
-      </div>
-
-      <div className="events-list">
-        <h3>Eventos del día:</h3>
-        <ul>
-          {events
-            .filter((event) => event.date.toDateString() === date.toDateString())
-            .map((event, index) => (
-              <li key={index}>{event.description}</li>
-            ))}
-        </ul>
-      </div>
-    </div>
+    <Box className="calendario-container">
+      <Typography variant="h4" align="center" gutterBottom>
+        Calendario USM
+      </Typography>
+      <FullCalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        headerToolbar={{
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay',
+        }}
+        events={events}
+        dateClick={handleDateClick} // Permite añadir eventos haciendo clic
+        editable={true}
+        selectable={true}
+        height="auto" // Permite ajustar la altura del calendario al contenido
+      />
+    </Box>
   );
 };
 
-export default CalendarioPage;
+export default Calendario;
